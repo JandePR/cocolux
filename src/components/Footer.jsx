@@ -25,7 +25,7 @@ const Footer = () => {
                 Un refugio de placer y sofisticación donde cada detalle está diseñado 
                 para despertar tus sentidos y crear experiencias inolvidables.
               </p>
-              <div className="adults-only-badge inline-block">
+              <div className="adults-only-badge">
                 Solo Adultos 18+
               </div>
             </div>

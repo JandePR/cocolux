@@ -75,6 +75,8 @@ body {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .section-padding {
