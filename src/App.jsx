@@ -11,7 +11,6 @@ import Amenidades from '@/components/Amenidades';
 import Desarrolladores from '@/components/Desarrolladores';
 import Mapa from '@/components/Mapa';
 import Footer from '@/components/Footer';
-import LeadModal from '@/components/LeadModal';
 
 function App() {
   return (
@@ -38,7 +37,6 @@ function App() {
           <Mapa />
         </main>
         <Footer />
-        <LeadModal />
         <Toaster />
       </div>
     </>
