@@ -10,8 +10,8 @@ const Hotel = () => {
 
   const handleCTA = (type) => {
     toast({
-      title: "🚧 Esta función aún no está implementada",
-      description: "¡Pero no te preocupes! Puedes solicitarla en tu próximo mensaje 🚀",
+      title: "",
+      description: "",
     });
   };
 
