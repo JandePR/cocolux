@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
       {/* Adults Only Badge */}
-      <div className="absolute top-8 right-4 md:top-28 md:right-8 z-20">
+      <div className="absolute top-16 right-4 md:top-28 md:right-8 z-20">
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
