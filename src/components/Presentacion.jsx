@@ -15,10 +15,10 @@ const Presentacion = () => {
   };
 
   const highlights = [
-    { label: 'Superficie', value: '2,500 m²' },
-    { label: 'Unidades', value: '24 Suites' },
-    { label: 'Entrega', value: 'Q4 2025' },
-    { label: 'Zona', value: 'Premium Turística' }
+    { label: 'Superficie', value: '39,663 m²' },
+    { label: 'Unidades', value: 'Falta esto' },
+    { label: 'Entrega', value: 'Falta esto' },
+    { label: 'Zona', value: 'Falta esto' }
   ];
 
   return (
