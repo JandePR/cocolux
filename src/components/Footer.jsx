@@ -35,7 +35,7 @@ const Footer = () => {
               <h3 className="font-bold text-lg mb-4">Contacto</h3>
               <div className="space-y-3">
                 <a 
-                  href="https://instagram.com/aureumstudio" 
+                  href="https://instagram.com/cocoluxhotel"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center text-[var(--cream)]/80 hover:text-[var(--cream)] transition-colors"
