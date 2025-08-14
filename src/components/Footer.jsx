@@ -22,7 +22,7 @@ const Footer = () => {
                 COCOLUX HOTEL BOUTIQUE
               </div>
               <p className="text-[var(--cream)]/80 mb-6 max-w-md">
-                Un refugio de placer y sofisticación donde cada detalle está diseñado 
+                Un refugio de placer y sofisticación donde cada detalle está diseñado
                 para despertar tus sentidos y crear experiencias inolvidables.
               </p>
               <div className="adults-only-badge">
@@ -34,9 +34,9 @@ const Footer = () => {
             <div>
               <h3 className="font-bold text-lg mb-4">Contacto</h3>
               <div className="space-y-3">
-                <a 
+                <a
                   href="https://instagram.com/cocoluxhotel"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-[var(--cream)]/80 hover:text-[var(--cream)] transition-colors"
                 >
@@ -79,10 +79,18 @@ const Footer = () => {
             viewport={{ once: true }}
             className="border-t border-[var(--cream)]/20 pt-8 text-center"
           >
-            <p className="text-[var(--cream)]/60">
-              © 2025 COCOLUX HOTEL BOUTIQUE. Todos los derechos reservados.
-              Desarrollado por Code & Brands.
-            </p>
+              <p className="text-[var(--cream)]/60">
+                  © 2025 COCOLUX HOTEL BOUTIQUE. Todos los derechos reservados.
+                  Desarrollado por{" "}
+                  <a
+                      href="https://codeandbrands.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-[var(--cream)]/60 hover:text-[var(--cream)] transition-colors duration-300"
+                  >
+                      Code & Brands
+                  </a>.
+              </p>
           </motion.div>
         </div>
       </div>
