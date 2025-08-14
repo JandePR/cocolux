@@ -154,6 +154,12 @@ const Hotel = () => {
                   alt="Planos arquitectónicos del proyecto"
                  src="https://images.unsplash.com/photo-1679511202153-0d4dc8ac0ff9" />
               </div>
+                <div className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift">
+                    <img
+                    className="w-full h-full object-cover"
+                    alt="Render interior del hotel COCOLUX"
+                    src="https://demo-source.imgix.net/scooter.jpg" />
+                </div>
             </div>
           </motion.div>
 
