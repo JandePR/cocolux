@@ -19,17 +19,17 @@ const Desarrolladores = () => {
     {
       nombre: 'Arq. José Alberto de la Cruz',
       cargo: 'Proyectista General',
-      especialidad: 'Arquitectura Hotelera y Diseño Sostenible'
+      especialidad: 'Arquitecto Supervisor'
     },
     {
       nombre: 'Arq. Sonia María Rodríguez',
-      cargo: 'Proyectista de Interiores',
-      especialidad: 'Diseño Sensorial y Espacios Íntimos'
+      cargo: 'Proyectista de Paisajismo',
+      especialidad: 'Diseño Escénico y Composición de Espacios Verdes'
     },
     {
       nombre: 'Arq. María Isabel Grullón',
-      cargo: 'Proyectista de Paisajismo',
-      especialidad: 'Jardines Sensoriales y Espacios Naturales'
+      cargo: 'Proyectista de Interiores',
+      especialidad: 'Diseño Sensorial y Espacios Íntimos'
     }
   ];
 

@@ -80,8 +80,8 @@ const Footer = () => {
             className="border-t border-[var(--cream)]/20 pt-8 text-center"
           >
             <p className="text-[var(--cream)]/60">
-              © 2024 COCOLUX HOTEL BOUTIQUE. Todos los derechos reservados. 
-              Desarrollado por Aureum Studio.
+              © 2025 COCOLUX HOTEL BOUTIQUE. Todos los derechos reservados.
+              Desarrollado por Code & Brands.
             </p>
           </motion.div>
         </div>

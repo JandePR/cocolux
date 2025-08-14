@@ -5,10 +5,10 @@ import { MapPin, Car, Plane, Building } from 'lucide-react';
 
 const Mapa = () => {
   const pois = [
-    { icon: Plane, label: 'Aeropuerto Internacional', distance: '15 min' },
-    { icon: Building, label: 'Centro Comercial Premium', distance: '5 min' },
-    { icon: Car, label: 'Marina Turística', distance: '8 min' },
-    { icon: MapPin, label: 'Zona Hotelera Principal', distance: '3 min' }
+    { icon: Car, label: 'Marina Turística', distance: '54 min' },
+    { icon: Plane, label: 'Aeropuerto Internacional', distance: '50 min' },
+    { icon: Building, label: 'Centro Comercial Premium', distance: '15 min' },
+    { icon: MapPin, label: 'Zona Hotelera Principal', distance: '13 min' }
   ];
 
   return (
@@ -63,7 +63,7 @@ const Mapa = () => {
           >
             <div className="aspect-video bg-gray-200 flex items-center justify-center">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-70.7000,-18.5000,-70.6000,-18.4000&layer=mapnik&marker=-18.45,-70.65"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-70.7000,-18.5000,-70.6000,-18.4000&layer=mapnik&marker=19.326133, -69.469031"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: '400px' }}

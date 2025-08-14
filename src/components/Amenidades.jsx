@@ -195,35 +195,6 @@ const Amenidades = () => {
             </div>
           </motion.div>
 
-          {/* Nota de Valor */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-sage rounded-2xl p-8 md:p-12 text-white mb-16"
-          >
-            <h3 className="font-kiona text-2xl md:text-3xl font-bold mb-6 text-center">
-              Valor Agregado para Inversionistas
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-bold text-xl mb-4">↑ ADR Premium</h4>
-                <p className="opacity-90">
-                  Las experiencias únicas permiten tarifas 40% superiores al mercado tradicional, 
-                  maximizando los ingresos por habitación disponible.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-bold text-xl mb-4">Upsells Exclusivos</h4>
-                <p className="opacity-90">
-                  Servicios premium y experiencias personalizadas generan ingresos adicionales 
-                  significativos por huésped.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
           {/* Días Especiales */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
