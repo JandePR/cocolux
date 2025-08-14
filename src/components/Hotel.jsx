@@ -16,17 +16,17 @@ const Hotel = () => {
   };
 
   const specs = [
-    { icon: Building, label: 'Altura', value: '6 niveles' },
+    { icon: Building, label: 'Altura', value: '2 niveles' },
     { icon: MapPin, label: 'Ubicación', value: 'Zona turística premium' },
-    { icon: Shield, label: 'Certificación', value: 'Construcción sostenible' },
-    { icon: Calendar, label: 'Inicio', value: 'Q1 2024' }
+    { icon: Shield, label: 'Certificación', value: 'Construcción organica' },
+    { icon: Calendar, label: 'Inicio', value: 'Q4 2025' }
   ];
 
   const cronograma = [
-    { fase: 'Diseño Arquitectónico', status: 'Completado', fecha: 'Q4 2023' },
-    { fase: 'Permisos y Licencias', status: 'En proceso', fecha: 'Q1 2024' },
-    { fase: 'Inicio de Construcción', status: 'Programado', fecha: 'Q2 2024' },
-    { fase: 'Entrega Final', status: 'Programado', fecha: 'Q4 2025' }
+    { fase: 'Diseño Arquitectónico', status: 'Completado', fecha: 'Q4 2024' },
+    { fase: 'Permisos y Licencias', status: 'En proceso', fecha: 'Q1 2025' },
+    { fase: 'Inicio de Construcción', status: 'Programado', fecha: 'Q4 2025' },
+    { fase: 'Entrega Final', status: 'Programado', fecha: 'Q4 2028' }
   ];
 
   const riesgos = [
@@ -52,7 +52,7 @@ const Hotel = () => {
               Especificaciones del Proyecto
             </h2>
             <p className="text-lg md:text-xl text-[var(--dark-olive)] max-w-3xl mx-auto">
-              Un desarrollo arquitectónico de vanguardia con los más altos estándares de calidad y sostenibilidad.
+              Un desarrollo arquitectónico de vanguardia con los más altos estándares de calidad.
             </p>
           </motion.div>
 
