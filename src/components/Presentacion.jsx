@@ -16,9 +16,9 @@ const Presentacion = () => {
 
   const highlights = [
     { label: 'Superficie', value: '39,663 m²' },
-    { label: 'Unidades', value: 'Falta esto' },
-    { label: 'Entrega', value: 'Falta esto' },
-    { label: 'Zona', value: 'Falta esto' }
+    { label: 'Unidades', value: '30 Suites' },
+    { label: 'Entrega', value: 'Q1 2028' },
+    { label: 'Zona', value: 'Las Terrenas' }
   ];
 
   return (
