@@ -35,7 +35,7 @@ const Amenidades = () => {
 
   const experiencias = [
     {
-      name: 'Práctica del Coco',
+      name: 'Práctica el Coco',
       description: 'Rituales sensoriales inspirados en la esencia natural del coco'
     },
     {
@@ -53,6 +53,10 @@ const Amenidades = () => {
     {
       name: 'Área de Libanesas Expuestas',
       description: 'Espacio de relajación y contemplación al aire libre'
+    },
+    {
+        name: 'Masaje erótico',
+        description: 'Masaje relajante y sensual enfocado en despertar los sentidos y liberar tensiones'
     }
   ];
 
