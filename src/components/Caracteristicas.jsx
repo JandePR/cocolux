@@ -22,24 +22,9 @@ const Caracteristicas = () => {
       description: 'Control inteligente de acceso y climatización desde tu dispositivo móvil'
     },
     {
-      icon: Zap,
-      title: 'Sistema BMS',
-      description: 'Building Management System para máxima eficiencia energética'
-    },
-    {
-      icon: Shield,
-      title: 'Eficiencia Energética',
-      description: 'Certificación LEED con paneles solares y sistemas sustentables'
-    },
-    {
       icon: Car,
       title: 'Parking Privado',
       description: 'Estacionamiento exclusivo para cada suite con carga eléctrica'
-    },
-    {
-      icon: Clock,
-      title: 'Servicio 24/7',
-      description: 'Concierge y servicios disponibles las 24 horas del día'
     },
     {
       icon: Wifi,
