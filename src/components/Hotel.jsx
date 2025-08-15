@@ -1,9 +1,8 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
-import { Calendar, MapPin, Shield, Building } from 'lucide-react';
+import { Calendar, MapPin, Shield, Building, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Hotel = () => {
   const { toast } = useToast();
@@ -35,6 +34,58 @@ const Hotel = () => {
     'Equipo constructor con 15+ años experiencia',
     'Póliza de cumplimiento del 100%'
   ];
+
+  // Galería: mismas imágenes que ya existían
+  const images = [
+    {
+      src: 'https://images.unsplash.com/photo-1695984182409-e281ee9fb45a',
+      alt: 'Render exterior del hotel COCOLUX',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1673004765673-1ad06d495d79',
+      alt: 'Render de la piscina infinity',
+    },
+    {
+      src: 'https://images.unsplash.com/photo-1679511202153-0d4dc8ac0ff9',
+      alt: 'Planos arquitectónicos del proyecto',
+    },
+    {
+      src: 'https://demo-source.imgix.net/scooter.jpg',
+      alt: 'Render interior del hotel COCOLUX',
+    },
+  ];
+
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const openLightbox = (index) => {
+    setCurrentIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const prevImage = (e) => {
+    e?.stopPropagation();
+    setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
+  const nextImage = (e) => {
+    e?.stopPropagation();
+    setCurrentIndex((i) => (i + 1) % images.length);
+  };
+
+  // Teclado: Esc para cerrar, flechas para navegar
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [lightboxOpen]);
 
   return (
     <section id="hotel" className="section-padding bg-white">
@@ -97,8 +148,8 @@ const Hotel = () => {
                 <div
                   key={index}
                   className={`p-6 rounded-xl border-2 ${
-                    fase.status === 'Completado' 
-                      ? 'bg-green-50 border-green-200' 
+                    fase.status === 'Completado'
+                      ? 'bg-green-50 border-green-200'
                       : fase.status === 'En proceso'
                       ? 'bg-yellow-50 border-yellow-200'
                       : 'bg-gray-50 border-gray-200'
@@ -110,13 +161,15 @@ const Hotel = () => {
                   <div className="font-bold text-[var(--espresso)] mb-2">
                     {fase.fase}
                   </div>
-                  <div className={`text-sm font-medium ${
-                    fase.status === 'Completado' 
-                      ? 'text-green-600' 
-                      : fase.status === 'En proceso'
-                      ? 'text-yellow-600'
-                      : 'text-gray-600'
-                  }`}>
+                  <div
+                    className={`text-sm font-medium ${
+                      fase.status === 'Completado'
+                        ? 'text-green-600'
+                        : fase.status === 'En proceso'
+                        ? 'text-yellow-600'
+                        : 'text-gray-600'
+                    }`}
+                  >
                     {fase.status}
                   </div>
                 </div>
@@ -124,7 +177,7 @@ const Hotel = () => {
             </div>
           </motion.div>
 
-          {/* Galería de Renders */}
+          {/* Galería de Renders con Lightbox */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -136,31 +189,97 @@ const Hotel = () => {
               Galería de Renders y Planos
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift">
-                <img  
-                  className="w-full h-full object-cover" 
-                  alt="Render exterior del hotel COCOLUX"
-                 src="https://images.unsplash.com/photo-1695984182409-e281ee9fb45a" />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift">
-                <img  
-                  className="w-full h-full object-cover" 
-                  alt="Render de la piscina infinity"
-                 src="https://images.unsplash.com/photo-1673004765673-1ad06d495d79" />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift">
-                <img  
-                  className="w-full h-full object-cover" 
-                  alt="Planos arquitectónicos del proyecto"
-                 src="https://images.unsplash.com/photo-1679511202153-0d4dc8ac0ff9" />
-              </div>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift">
-                    <img
+              {images.map((img, idx) => (
+                <button
+                  key={img.src}
+                  type="button"
+                  onClick={() => openLightbox(idx)}
+                  className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift focus:outline-none focus:ring-2 focus:ring-[var(--terracotta)]"
+                  aria-label={`Abrir imagen: ${img.alt}`}
+                >
+                  <img
                     className="w-full h-full object-cover"
-                    alt="Render interior del hotel COCOLUX"
-                    src="https://demo-source.imgix.net/scooter.jpg" />
-                </div>
+                    src={img.src}
+                    alt={img.alt}
+                  />
+                </button>
+              ))}
             </div>
+
+            {/* Lightbox Overlay */}
+            <AnimatePresence>
+              {lightboxOpen && (
+                <motion.div
+                  key="overlay"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={closeLightbox}
+                  className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center"
+                  aria-modal="true"
+                  role="dialog"
+                >
+                  <motion.div
+                    key="content"
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.95, opacity: 0 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="relative w-full max-w-5xl mx-4"
+                  >
+                    {/* Close button */}
+                    <button
+                      onClick={closeLightbox}
+                      className="absolute -top-12 right-0 text-white/80 hover:text-white transition rounded-full p-2"
+                      aria-label="Cerrar lightbox"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+
+                    {/* Image container */}
+                    <div className="relative bg-black rounded-xl overflow-hidden shadow-2xl">
+                      <img
+                        src={images[currentIndex].src}
+                        alt={images[currentIndex].alt}
+                        className="w-full h-[70vh] object-contain bg-black"
+                        draggable={false}
+                      />
+
+                      {/* Caption */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <p className="text-white text-sm md:text-base">
+                          {images[currentIndex].alt}
+                        </p>
+                      </div>
+
+                      {/* Controls */}
+                      <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2">
+                        <button
+                          onClick={prevImage}
+                          aria-label="Imagen anterior"
+                          className="p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition focus:outline-none focus:ring-2 focus:ring-white"
+                        >
+                          <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          aria-label="Siguiente imagen"
+                          className="p-2 md:p-3 rounded-full bg-black/40 hover:bg-black/60 text-white transition focus:outline-none focus:ring-2 focus:ring-white"
+                        >
+                          <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+                        </button>
+                      </div>
+
+                      {/* Counter */}
+                      <div className="absolute top-3 left-3 text-white/80 text-xs md:text-sm bg-black/40 px-2 py-1 rounded">
+                        {currentIndex + 1} / {images.length}
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
           {/* Riesgos Mitigados */}
