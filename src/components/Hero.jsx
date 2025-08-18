@@ -16,7 +16,7 @@ const Hero = () => {
 
   const trustLogos = [
     'Certificación Turística',
-    'Arquitectura Sostenible',
+    'Arquitectura Organica',
     'Calidad Premium',
     'Inversión Segura'
   ];
