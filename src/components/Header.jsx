@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -81,13 +80,18 @@ const Header = () => {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              onClick={() => handleCTA('brochure')}
-              className="border-[var(--sage)] text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+            <a
+              href="/brochurehotel.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Solicitar Brochure
-            </Button>
+              <Button
+                variant="outline"
+                className="border-[var(--sage)] text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+              >
+                Ver Brochure
+              </Button>
+            </a>
             <Button
               onClick={() => handleCTA('visita')}
               className="bg-gradient-terracotta text-white hover:opacity-90"
@@ -128,13 +132,18 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-[var(--sage)]/20">
-                <Button
-                  variant="outline"
-                  onClick={() => handleCTA('brochure')}
-                  className="border-[var(--sage)] text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+                <a
+                  href="/brochurehotel.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Solicitar Brochure
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="border-[var(--sage)] text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+                  >
+                    Ver Brochure
+                  </Button>
+                </a>
                 <Button
                   onClick={() => handleCTA('visita')}
                   className="bg-gradient-terracotta text-white hover:opacity-90"

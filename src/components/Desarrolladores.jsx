@@ -179,14 +179,19 @@ const Desarrolladores = () => {
               >
                 Solicitar Reunión con Arquitectas
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={() => handleCTA('brochure')}
-                className="border-2 border-[var(--terracotta)] text-[var(--terracotta)] hover:bg-[var(--terracotta)] hover:text-white px-8 py-4 text-lg font-semibold"
+              <a
+                href="/brochurehotel.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Descargar Brochure Completo
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-[var(--terracotta)] text-[var(--terracotta)] hover:bg-[var(--terracotta)] hover:text-white px-8 py-4 text-lg font-semibold"
+                >
+                  Descargar Brochure Completo
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>

@@ -104,8 +104,21 @@ const Presentacion = () => {
                 onClick={handleCTA}
                 className="border-2 border-white text-white hover:bg-white hover:text-[var(--sage)] px-8 py-4 text-lg font-semibold"
               >
-                Descargar Brochure
+                Agendar Visita Privada
               </Button>
+              <a
+                href="/brochurehotel.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[var(--sage)] px-8 py-4 text-lg font-semibold"
+                >
+                  Descargar Brochure
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>
