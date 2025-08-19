@@ -59,7 +59,7 @@ const Header = () => {
             onClick={() => scrollToSection('inicio')}
           >
             <img
-              src="/logosolosinbg.png"
+              src="images/logosolosinbg.png"
               alt="Cocolux logo"
               className="h-8 w-8 object-contain"
             />
