@@ -28,7 +28,7 @@ const Hero = () => {
         <img  
           className="w-full h-full object-cover" 
           alt="Render 3D del hotel COCOLUX con diseño moderno y elegante"
-         src="https://images.unsplash.com/photo-1568229988520-4bc288da81f7" />
+         src="/images/25.jpg" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
       </div>
 
