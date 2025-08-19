@@ -35,24 +35,40 @@ const Hotel = () => {
     'Póliza de cumplimiento del 100%'
   ];
 
-  // Galería: mismas imágenes que ya existían
+  // Galería
   const images = [
-    {
-      src: 'https://images.unsplash.com/photo-1695984182409-e281ee9fb45a',
-      alt: 'Render exterior del hotel COCOLUX',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1673004765673-1ad06d495d79',
-      alt: 'Render de la piscina infinity',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1679511202153-0d4dc8ac0ff9',
-      alt: 'Planos arquitectónicos del proyecto',
-    },
-    {
-      src: 'https://demo-source.imgix.net/scooter.jpg',
-      alt: 'Render interior del hotel COCOLUX',
-    },
+    { src: '/images/4.jpg', alt: '.' },
+    { src: '/images/6.jpg', alt: '.' },
+    { src: '/images/7.jpg', alt: '.' },
+    { src: '/images/8.jpg', alt: '.' },
+    { src: '/images/9.jpg', alt: '.' },
+    { src: '/images/10.jpg', alt: '.' },
+    { src: '/images/11.jpg', alt: '.' },
+    { src: '/images/16.jpg', alt: '.' },
+    { src: '/images/19.jpg', alt: '.' },
+    { src: '/images/20.jpg', alt: '.' },
+    { src: '/images/21.jpg', alt: '.' },
+    { src: '/images/22.jpg', alt: '.' },
+    { src: '/images/23.jpg', alt: 'Imagen 23' },
+    { src: '/images/26.jpg', alt: '.' },
+    { src: '/images/27.jpg', alt: '.' },
+    { src: '/images/28.jpg', alt: '.' },
+    { src: '/images/32.jpg', alt: '.' },
+    { src: '/images/33.jpg', alt: '.' },
+    { src: '/images/36.jpg', alt: '.' },
+    { src: '/images/38.jpg', alt: '.' },
+    { src: '/images/42.jpg', alt: '.' },
+    { src: '/images/43.jpg', alt: '.' },
+    { src: '/images/44.jpg', alt: '.' },
+    { src: '/images/46.jpg', alt: '.' },
+    { src: '/images/47.jpg', alt: '.' },
+    { src: '/images/48.jpg', alt: '.' },
+    { src: '/images/49.jpg', alt: '.' },
+    { src: '/images/51.jpg', alt: '.' },
+    { src: '/images/54.jpg', alt: '.' },
+    { src: '/images/58.jpg', alt: '.' },
+    { src: '/images/60.jpg', alt: '.' },
+    { src: '/images/Render nuevo 7.png', alt: '.' },
   ];
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
