@@ -87,6 +87,31 @@ const Hotel = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [lightboxOpen]);
 
+  // --- Countdown lock for Gallery (Dominican Republic time UTC-4: 2025-08-21 10:00) ---
+  // Convert to equivalent UTC moment: 2025-08-21T14:00:00Z
+  const releaseAtUTC = new Date('2025-08-21T14:00:00Z').getTime();
+  const [nowTs, setNowTs] = useState(Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setNowTs(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const remainingMs = Math.max(0, releaseAtUTC - nowTs);
+  const isLocked = remainingMs > 0;
+
+  const formatRemaining = (ms) => {
+    const totalSeconds = Math.floor(ms / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    const pad = (n) => n.toString().padStart(2, '0');
+    if (days > 0) {
+      return `${days}d ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+    return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  };
+  // --- End countdown lock ---
+
   return (
     <section id="hotel" className="section-padding bg-white">
       <div className="container mx-auto px-4">
@@ -183,27 +208,65 @@ const Hotel = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 relative"
           >
             <h3 className="font-kiona text-2xl md:text-3xl font-bold text-[var(--espresso)] mb-8 text-center">
               Galería de Renders y Planos
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {images.map((img, idx) => (
-                <button
-                  key={img.src}
-                  type="button"
-                  onClick={() => openLightbox(idx)}
-                  className="aspect-video rounded-xl overflow-hidden shadow-coco hover-lift focus:outline-none focus:ring-2 focus:ring-[var(--terracotta)]"
-                  aria-label={`Abrir imagen: ${img.alt}`}
+
+            {/* Lock overlay and blurred content wrapper */}
+            <div className="relative">
+              {/* Content that gets blurred while locked */}
+              <div
+                className={`transition filter ${isLocked ? 'blur-sm' : 'blur-0'}`}
+                aria-hidden={isLocked ? 'true' : 'false'}
                 >
-                  <img
-                    className="w-full h-full object-cover"
-                    src={img.src}
-                    alt={img.alt}
-                  />
-                </button>
-              ))}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {images.map((img, idx) => (
+                    <button
+                      key={img.src}
+                      type="button"
+                      onClick={() => !isLocked && openLightbox(idx)}
+                      className={`aspect-video rounded-xl overflow-hidden shadow-coco hover-lift focus:outline-none focus:ring-2 focus:ring-[var(--terracotta)] ${
+                        isLocked ? 'cursor-not-allowed' : ''
+                      }`}
+                      aria-label={`Abrir imagen: ${img.alt}`}
+                      aria-disabled={isLocked ? 'true' : 'false'}
+                      tabIndex={isLocked ? -1 : 0}
+                    >
+                      <img
+                        className="w-full h-full object-cover"
+                        src={img.src}
+                        alt={img.alt}
+                        draggable={false}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Countdown Overlay (only while locked) */}
+              <AnimatePresence>
+                {isLocked && (
+                  <motion.div
+                    key="gallery-lock"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 z-10 flex items-center justify-center"
+                    aria-live="polite"
+                  >
+                    <div className="backdrop-blur-md bg-white/60 border border-white/40 shadow-xl rounded-2xl px-6 py-5 text-center">
+                      <div className="text-sm uppercase tracking-wide text-[var(--terracotta)] font-semibold mb-1">
+                        Disponible en
+                      </div>
+                      <div className="font-kiona text-2xl md:text-3xl font-bold text-[var(--espresso)]">
+                        {formatRemaining(remainingMs)}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Lightbox Overlay */}
