@@ -81,7 +81,7 @@ const Header = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="/brochurehotel.pdf"
+              href="files/brochurehotel.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

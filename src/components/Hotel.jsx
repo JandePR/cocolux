@@ -8,6 +8,11 @@ const Hotel = () => {
   const { toast } = useToast();
 
   const handleCTA = (type) => {
+    if (type === 'planos') {
+      const pdfUrl = 'files/Hotel%20Boutique%20PLANOS%20FINALES.pdf';
+      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
     toast({
       title: "",
       description: "",
@@ -49,7 +54,7 @@ const Hotel = () => {
     { src: '/images/20.jpg', alt: '.' },
     { src: '/images/21.jpg', alt: '.' },
     { src: '/images/22.jpg', alt: '.' },
-    { src: '/images/23.jpg', alt: 'Imagen 23' },
+    { src: '/images/23.jpg', alt: '.' },
     { src: '/images/26.jpg', alt: '.' },
     { src: '/images/27.jpg', alt: '.' },
     { src: '/images/28.jpg', alt: '.' },
@@ -396,7 +401,7 @@ const Hotel = () => {
                 onClick={() => handleCTA('planos')}
                 className="bg-gradient-terracotta text-white hover:opacity-90 px-8 py-4 text-lg font-semibold"
               >
-                Solicitar Planos Completos
+                Ver Planos Completos
               </Button>
               <Button
                 size="lg"
