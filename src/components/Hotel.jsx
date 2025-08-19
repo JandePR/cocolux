@@ -89,7 +89,7 @@ const Hotel = () => {
 
   // --- Countdown lock for Gallery (Dominican Republic time UTC-4: 2025-08-21 10:00) ---
   // Convert to equivalent UTC moment: 2025-08-21T14:00:00Z
-  const releaseAtUTC = new Date('2025-08-19T02:25:00Z').getTime();
+  const releaseAtUTC = new Date('2025-08-21T14:00:00Z').getTime();
   const [nowTs, setNowTs] = useState(Date.now());
   useEffect(() => {
     const t = setInterval(() => setNowTs(Date.now()), 1000);
