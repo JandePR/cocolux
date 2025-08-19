@@ -8,11 +8,6 @@ const Hotel = () => {
   const { toast } = useToast();
 
   const handleCTA = (type) => {
-    if (type === 'planos') {
-      const pdfUrl = 'files/Hotel%20Boutique%20PLANOS%20FINALES.pdf';
-      window.open(pdfUrl, '_blank', 'noopener,noreferrer');
-      return;
-    }
     toast({
       title: "",
       description: "",
