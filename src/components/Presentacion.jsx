@@ -98,16 +98,9 @@ const Presentacion = () => {
               >
                 Agendar Visita Privada
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={handleCTA}
-                className="border-2 border-white text-white hover:bg-white hover:text-[var(--sage)] px-8 py-4 text-lg font-semibold"
-              >
-                Agendar Visita Privada
-              </Button>
+              {/* Se elimina el botón duplicado más reciente */}
               <a
-                href="/brochurehotel.pdf"
+                href="files/brochurehotel.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

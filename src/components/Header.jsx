@@ -133,7 +133,7 @@ const Header = () => {
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-[var(--sage)]/20">
                 <a
-                  href="/brochurehotel.pdf"
+                  href="files/brochurehotel.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -180,7 +180,7 @@ const Desarrolladores = () => {
                 Solicitar Reunión con Arquitectas
               </Button>
               <a
-                href="/brochurehotel.pdf"
+                href="files/brochurehotel.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
