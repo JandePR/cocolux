@@ -55,9 +55,14 @@ const Header = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="font-kiona text-2xl font-bold text-gradient cursor-pointer"
+            className="flex items-center gap-2 font-kiona text-2xl font-bold text-gradient cursor-pointer"
             onClick={() => scrollToSection('inicio')}
           >
+            <img
+              src="/logosolosinbg.png"
+              alt="Cocolux logo"
+              className="h-8 w-8 object-contain"
+            />
             COCOLUX
           </motion.div>
 
